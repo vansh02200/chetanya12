@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saved</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="project.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        #List {
+    border: 1px solid rgb(206, 203, 203);
+    border-radius: 20px;
+    background-color: #ffffff;
+    padding: 30px;
+    width: 600px;
+    box-shadow: 10px 10px 10px 10px rgb(245, 243, 243);
+}
+.save{
+    display: flex;
+    justify-content: center;
+    font-size: 20px;
+    gap: 1250px;
+    margin-top: 15px;
+    font-size: 25px;
+    color: #117a7c;
+}
+.clos{
+    display: flex;
+    justify-content: center;
+    font-size:18px ;
+    color: blue;
+    text-decoration: underline;
+    cursor: pointer;
+}
+#List{
+    margin-top: 10px;
+    
+}
+@media (max-width:400px){
+    .mainContainer{
+        margin-right:400px ;
+        display: flex;
+        flex-direction: column;
+        
+    }
+
+}
+.main{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+hr {
+      border: none; /* Remove default border */
+      height: 1px; /* Set the height of the line */
+      background-color: #827a7a; /* Set the background color to dark */
+      margin: 20px 0; /* Adjust margin as needed */
+    }
+    
+    </style>
+</head>
+<body>
+    <div class="mainContainer">
+    <!-- <div class="save">Saved Content <span id="deleteButton" style="cursor: pointer;font-size: 20px;" ><i class="fa-solid fa-trash"></i></span></div> -->
+    <div class="main">
+    <div id="List"></div><br>
+</div>
+</div>
+    <div class="clos" onclick="clos()">Close window</div>
+
+</body>
+</html>
+<script >
+    const savedDivs = [];
+    window.onload = function() {
+    
+    
+    for (let i = 1; i <= 10; i++) {
+        const savedContent = sessionStorage.getItem(`savedDivContent${i}`);
+        if (savedContent) {
+            savedDivs.push(savedContent);
+        }
+    }
+
+    // Append saved content to List div
+    const listDiv = document.getElementById("List");
+    savedDivs.forEach(content => {
+        listDiv.innerHTML += content+"<br><br><hr>";
+    });
+
+    // Check if savedDivs sessionStorage is empty
+    if (savedDivs.length === 0) {
+        listDiv.innerHTML += "Nothing has saved yet :(";
+        document.getElementById("List").style.fontSize="20px";
+        document.getElementById("List").style.color="red";
+    } 
+};
+
+// Assume you have a delete button with id "deleteButton"
+const deleteButton = document.getElementById("deleteButton");
+
+// Add event listener to the delete button
+deleteButton.addEventListener("click", function() {
+    // Determine the key of the item you want to delete (e.g., savedDivContent1)
+    const keyToRemove = "savedDivContent1"; // Change this to the appropriate key
+    
+    // Remove the item from session storage
+    sessionStorage.removeItem(keyToRemove);
+
+    // Optionally, you can also remove the content from the UI if needed
+    const listDiv = document.getElementById("List");
+    listDiv.innerHTML = "Nothing has saved yet :(";
+    document.getElementById("List").style.fontSize="20px";
+    document.getElementById("List").style.color="red";
+    savedDivs=[];
+
+    
+});
+function clos(){
+    window.open("index.html");
+}
+</script>

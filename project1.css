@@ -1,0 +1,28 @@
+body{
+    justify-content: center;
+    align-items: center;
+}
+.log{
+    height: 55px;
+}
+@keyframes scroll{
+    0%{
+        transform: translateX(-20px);
+    }
+    
+    100%{
+        transform: translateX(1550px);
+    }
+}
+.slider{
+    height: 100px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    width: auto;
+
+}
+.slider .slide-track{
+    animation: scroll 5s linear infinite;
+    display: flex;
+}

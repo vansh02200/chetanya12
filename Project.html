@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freshers.com</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <link rel="stylesheet" href="project.css">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./css/aa.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="mainContainer" id="mainContainer">
+        <div class="container" id="container">
+            <nav><img class="im" src="freshers.png" alt=""></nav>
+            <nav class="g">Jobs</nav>
+            <nav class="g" id="scrollButton">Companies</nav>
+            <nav class="g" id="shareButton">Share</nav>
+            <nav class="g" onclick="saved()">Saved</nav>
+            
+        </div>
+        <div class="search1" id="search1" style="margin-right: 12px;">
+            <nav><input type="text" class="search" id="s" placeholder="   Search "></nav>
+        </div>
+        <span class="bar"><i class="fa-solid fa-bars" onclick="burger()"></i></span>
+        <div class="login">
+           <p id="login1" style="color:#117a7c;font-size: 16px;margin-top: 4px;font-weight: 600;width: 180px;"><span id="greeting1" style="font-size: 16px;"></span> <span style="color: #117a7c;font-size: 18px;font-weight: 700;margin-top: 1.2px;" id="hello1"></span><span>!</span></p>
+        </div>
+        
+        <div id="employ" class="employ">
+            <div class="line">
+                <p class="for" style="color:#117a7c;font-size: 14px;">Clear Saved <span class="logout"><i class="fa-solid fa-right-from-bracket" onclick=" return logout12()"><span class="logo" onclick=" return logout12()">Logout</span></i></span></p>
+                
+            </div>
+            <div style="margin-right: 80px;margin-top: 4px;"></i><i id="deleteButt" class="fa-solid fa-trash" style="cursor: pointer;"></i></div>
+        </div>
+        
+    </div>
+    <div class="mainLeft" id="mainLeft">
+        <div class="leftContainer">
+            <div class="filter">All Filters</div>
+            <div class="horizontal"></div>
+            <div class="workMode" id="workMode">
+                <div style="font-size: 17px;">Work Mode <span><i id="arrow" style="margin-left: 110px;" onclick="return work()" class="fa-solid fa-angle-down"></i></span></div>
+                <div class="work" id="work">
+                    <input class="input" type="checkbox" id="workModeCheckbox"> Work from office (31)</li> <br>
+                    <input class="input" type="checkbox" id="HybridCheckbox"> Hybrid (4)</li>
+                </div><br>
+                <div class="horizontal"></div><br>
+                <div class="experience">
+                    <div style="font-size: 17px;">Experience<span><i id="arrow" style="margin-left: 123px;"
+                        onclick="return exp()" class="fa-solid fa-angle-down"></i></span></div>
+                    <div class="exp" id="experienceRange">
+                        <div class="range"><input style="width: 200px;" type="range" id="experienceRangeInput" min="0" max="30" value="0" oninput="updateExperience()"></div>
+                        <div class="yrs2">0 Yrs <span class="yrs">30 Yrs</span></div>
+                        <div class="yrs2">
+                    <span id="ageDisplay">0</span> Yrs <span class="yrs">30 Yrs</span>
+        </div>
+                    </div>
+                </div><br>
+                <div class="horizontal"></div><br>
+                <div class="department">
+                    <div style="font-size: 17px;">Department<span><i id="arrow" style="margin-left: 123px;"
+                                onclick="return dept1()" class="fa-solid fa-angle-down"></i></span></div>
+                    <div class="dept" id="dept1">
+                        <input class="input" type="checkbox" id="ProductionCheckbox1"> Production, Manufacturin... <span>(7)</span><br>
+                        <div><input class="input" type="checkbox"> Sales & Business Develop... <span>(5)</span></div>
+                        <input class="input" type="checkbox" id="workModeCheckox"> Engineering - Soft... <span>(3)</span><br>
+                        <input class="input" type="checkbox" id="workModeCheckox"> BFSI, Investments... <span>(2)</span><br>
+                        <div style="margin-left: 20px;margin-top: 7px;color: #275DF5; font: 14px;">View more</div>
+                    </div><br>
+                    <div class="horizontal"></div><br>
+                    <div id = "salary" class="salary">
+                        <div style="font-size: 17px;">Salary<span><i id="arrow" style="margin-left: 123px;"
+                                    class="fa-solid fa-angle-down" onclick="return closeIt()"></i></span></div>
+                        <div id="dept" class="dept">
+                            <input id="SalaryCheckbox1" class="input" type="checkbox"> 10-15 Lakhs <span>(34)</span><br>
+                            <div><input id="SalaryCheckbox2" class="input" type="checkbox"> 15-25 Lakhs<span>(51)</span></div>
+                            <input class="input" id="SalaryCheckbox3" type="checkbox"> 25-50 Lakhs<span>(82)</span><br>
+                            <input class="input" id="SalaryCheckbox4" type="checkbox"> 50-75 Lakhs <span>(51)</span><br>
+                            <div style="margin-left: 20px;margin-top: 7px;color: #275DF5; font: 14px;">View more</div>
+                        </div><br>
+                    </div>
+                    <div class="horizontal"></div><br>
+                    <div class="company" >
+                        <div style="font-size: 17px;">Company type<span><i id="arrow" style="margin-left: 123px;"
+                                    class="fa-solid fa-angle-down" onclick="company()"></i></span></div>
+                        <div class="dept" id="company">
+                            <input class="input" type="checkbox"> Corporate <span>(5)</span><br>
+                            <div><input class="input" type="checkbox"> Indian MNC<span>(2)</span></div>
+                        </div><br>
+                    </div>
+                    <div class="horizontal"></div><br>
+                    <div class="role">
+                        <div style="font-size: 17px;">Role category<span><i id="arrow" style="margin-left: 123px;"
+                            class="fa-solid fa-angle-down" onclick="role12()"></i></span></div>
+                        <div class="dept" id="role12" >
+                            <input class="input" type="checkbox"> Telecom <span>(2)</span><br>
+                            <div><input class="input" type="checkbox"> Management<span>(2)</span></div>
+                            <div><input class="input" type="checkbox"> Operations, Mainte...<span>(2)</span></div>
+                            <div><input id="engnCheckbox" class="input" type="checkbox" > Engineering<span>(3)</span></div>
+                            <div style="margin-left: 20px;margin-top: 7px;color: #275DF5; font: 14px;">View more</div>
+                        </div><br>
+                    </div>
+                    <div class="horizontal"></div><br>
+                    <div class="education">
+                        <div style="font-size: 17px;">Education<span><i id="arrow" style="margin-left: 123px;"
+                                    class="fa-solid fa-angle-down" onclick="education()"></i></span></div>
+                        <div class="dept" id="education1">
+                            <input class="input" type="checkbox"> MS/M.sc(Science) <span>(2)</span><br>
+                            <div><input class="input" type="checkbox"> Mtech<span>(1)</span></div>
+                            <div><input class="input" type="checkbox"> Any Graduate<span>(20)</span></div>
+                            <div><input class="input" type="checkbox" id="btechCheckbox"> B.Tech/B.E<span>(1)</span></div>
+                            <div style="margin-left: 20px;margin-top: 7px;color: #275DF5; font: 14px;">View more</div>
+                        </div><br>
+                    </div>
+                    <div class="horizontal"></div><br>
+                    <div class="posted">
+                        <div style="font-size: 17px;">Posted by<span><i id="arrow" style="margin-left: 123px;"
+                                    class="fa-solid fa-angle-down" onclick="posted()"></i></span></div>
+                        <div class="dept" id="posted1">
+                            <input class="input" type="checkbox" id="companyCheckbox"> Company Jobs<span>(8)</span><br>
+                            <div><input class="input" type="checkbox" id="consultantCheckbox"> Consultant Jobs<span>(3)</span></div>
+                        </div><br>
+                    </div>
+                    <div class="horizontal"></div><br>
+                    <div class="Industry">
+                        <div style="font-size: 17px;">Industry<span><i id="arrow" style="margin-left: 123px;"
+                                    class="fa-solid fa-angle-down" onclick="industry()"></i></span></div>
+                        <div class="dept" id="industry">
+                            <input class="input" type="checkbox"> Auto Components<span>(2)</span><br>
+                            <div><input class="input" type="checkbox"> Goverment / Publ<span>(2)</span></div>
+                            <div><input class="input" type="checkbox"> Chemicals<span>(1)</span></div>
+                            <div><input class="input" type="checkbox"> Electrical Equipment<span>(1)</span></div>
+                            <div style="margin-left: 20px;margin-top: 7px;color: #275DF5; font: 14px;">View more</div>
+                        </div><br>
+                    </div>
+                    <div class="horizontal"></div><br>
+                    <div class="Location">
+                        <div style="font-size: 17px;">Location<span><i id="arrow" style="margin-left: 123px;"
+                                    class="fa-solid fa-angle-down" onclick="locate()"></i></span></div>
+                        <div class="dept" id="locate1">
+                            <input class="input" type="checkbox" id="chennaiCheckbox"> Chennai<span>(1)</span><br>
+                            <div><input class="input" type="checkbox" id="puneCheckbox"> Pune<span>(3)</span></div>
+                            <div><input class="input" type="checkbox" id="delhiCheckbox"> Delhi / NCR<span>(2)</span></div>
+                            <div><input class="input" type="checkbox" id="bangloreCheckbox"> Banglore<span>(2)</span></div>
+                            <div style="margin-left: 20px;margin-top: 7px;color: #275DF5; font: 14px;">View more</div>
+                        </div><br>
+                        <div style="background-color: white; height: 250px;width: 240px;border-radius: 15px;">
+                            <div><img style="width: 150px;margin-left: 15px;" src="freshers.png" alt=""></div>
+                            <p class="para" >Increase your profile visibility up to 3 times among recruiters hiring for their jobs</p>
+                            <p style="margin-left: 15px;">Become visible to more recruiters with Resume Display Service.</p>
+                            <p style="font-weight: 500;color: #275DF5;margin-left: 15px;">Know More</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mainMide">
+        <div class="mid" id="mid">
+            <p class="p1">
+            <div class="dropdown"> <span style="color: #686b7d;">1 - 10 of 10</span> Jobs in India <span style="margin-left: 130px; color: #275DF5;">Send me jobs like these</span>
+                <span class="lop"><button class="btn dropdown-toggle" type="button" data-toggle="dropdown">
+                    Sort by: 
+                    <span class="sort-option">Relevance</span> 
+                <span class="caret"></span>
+                </button>
+                <ul style="margin-left: 430px; margin-top: 13px;border-radius: 10px;" class="dropdown-menu">
+                    <li><a href="#" class="sort-by" data-sort="relevance">Relevance</a></li>
+                    <li><a href="#" class="sort-by" data-sort="date">Date</a></li>
+                </ul>
+            </span>
+        </div></p>
+        
+        <div class="burger" id="burger">
+            <p id="login" style="color: #117a7c;font-size: 16px;margin-top: 4px;font-weight: 600;width: 180px;"><span id="greeting" style="font-size: 16px;"></span> <span style="color: #117a7c;font-size: 18px;font-weight: 700;margin-top: 1.2px;" id="hello"></span><span>!</span></p>
+            <nav>Jobs</nav>
+            <nav id="scrollButton">Companies</nav>
+            <nav id="shareButton">Share</nav>
+            <nav onclick="saved()">Saved</nav>
+            <p class="for" style="color:#117a7c;font-size: 14px;">Login <i id="deleteButt1" class="fa-solid fa-trash" style="cursor: pointer;"></i></p>
+            <span class="logout"><i class="fa-solid fa-right-from-bracket" onclick=" return logout12()"><span class="logo" onclick=" return logout12()">Login</span></i></span>
+        </div>
+        <div class="filter" id="filterButton">All Filters</div>
+        <div class="filterPanel" id="filterPanel">
+            <div class="filter">All Filters</div>
+            <div class="horizontal"></div>
+            <div class="workMode" id="workMode">
+                <div style="font-size: 17px;">Work Mode <span><i id="arrow" style="margin-left: 110px;" onclick="return work()" class="fa-solid fa-angle-down"></i></span></div>
+                <div class="work" id="work1">
+                    <input class="input" type="checkbox" id="workModeCheckbox1"> Work from office (31)</li> <br>
+                    <input class="input" type="checkbox" id="HybridCheckbox1"> Hybrid (4)</li>
+                </div><br>
+                <div class="horizontal"></div><br>
+                <div class="experience">
+                    <div style="font-size: 17px;">Experience<span><i id="arrow" style="margin-left: 123px;"
+                               onclick="return exp()" class="fa-solid fa-angle-down"></i></span></div>
+                    <div class="exp" id="experienceRange">
+                        <div class="range"><input style="width: 200px;" type="range" id="experienceRangeInput" min="0" max="30" value="0" oninput="updateExperience()"></div>
+                        <div class="yrs2">0 Yrs <span class="yrs">30 Yrs</span></div>
+                        <div class="yrs2">
+                    <span id="ageDisplay">0</span> Yrs <span class="yrs">30 Yrs</span>
+        </div>
+                    </div>
+                </div><br>
+                <div class="horizontal"></div><br>
+                <div class="department">
+                    <div style="font-size: 17px;">Department<span><i id="arrow" style="margin-left: 123px;"
+                               onclick="return dept1()" class="fa-solid fa-angle-down"></i></span></div>
+                    <div class="dept" id="dept2">
+                        <input class="input" type="checkbox" id="ProductionCheckbox"> Production, Manufacturin... <span>(7)</span><br>
+                        <div><input class="input" type="checkbox"> Sales & Business Develop... <span>(5)</span></div>
+                        <input class="input" type="checkbox" id="workModeChekbox"> Engineering - Soft... <span>(3)</span><br>
+                        <input class="input" type="checkbox" id="workModeCheckbox"> BFSI, Investments... <span>(2)</span><br>
+                        <div style="margin-left: 20px;margin-top: 7px;color: #275DF5; font: 14px;">View more</div>
+                    </div><br>
+                    <div class="horizontal"></div><br>
+                    <div id = "salary" class="salary">
+                        <div style="font-size: 17px;">Salary<span><i id="arrow" style="margin-left: 123px;"
+                                    class="fa-solid fa-angle-down" onclick="return closeIt()"></i></span></div>
+                        <div id="dept23" class="dept">
+                            <input id="SalaryCheckbox6" class="input" type="checkbox"> 10-15 Lakhs <span>(34)</span><br>
+                            <div><input id="SalaryCheckbox7" class="input" type="checkbox"> 15-25 Lakhs<span>(51)</span></div>
+                            <input class="input" id="SalaryCheckbox8" type="checkbox"> 25-50 Lakhs<span>(82)</span><br>
+                            <input class="input" id="SalaryCheckbox9" type="checkbox"> 50-75 Lakhs <span>(51)</span><br>
+                            <div style="margin-left: 20px;margin-top: 7px;color: #275DF5; font: 14px;">View more</div>
+                        </div><br>
+                    </div>
+                    <div class="horizontal"></div><br>
+                    <div class="company" >
+                        <div style="font-size: 17px;">Company type<span><i id="arrow" style="margin-left: 123px;"
+                                    class="fa-solid fa-angle-down" onclick="company()"></i></span></div>
+                        <div class="dept" id="company2">
+                            <input class="input" type="checkbox"> Corporate <span>(5)</span><br>
+                            <div><input class="input" type="checkbox"> Indian MNC<span>(2)</span></div>
+                        </div><br>
+                    </div>
+                    <div class="horizontal"></div><br>
+                    <div class="role">
+                        <div style="font-size: 17px;">Role category<span><i id="arrow" style="margin-left: 123px;"
+                            class="fa-solid fa-angle-down" onclick="role12()"></i></span></div>
+                        <div class="dept" id="role13" >
+                            <input class="input" type="checkbox"> Telecom <span>(2)</span><br>
+                            <div><input class="input" type="checkbox"> Management<span>(2)</span></div>
+                            <div><input class="input" type="checkbox"> Operations, Mainte...<span>(2)</span></div>
+                            <div><input id="engnCheckbox1" class="input" type="checkbox" > Engineering<span>(3)</span></div>
+                            <div style="margin-left: 20px;margin-top: 7px;color: #275DF5; font: 14px;">View more</div>
+                        </div><br>
+                    </div>
+                    <div class="horizontal"></div><br>
+                    <div class="education">
+                        <div style="font-size: 17px;">Education<span><i id="arrow" style="margin-left: 123px;"
+                                    class="fa-solid fa-angle-down" onclick="education()"></i></span></div>
+                        <div class="dept" id="education2">
+                            <input class="input" type="checkbox"> MS/M.sc(Science) <span>(2)</span><br>
+                            <div><input class="input" type="checkbox"> Mtech<span>(1)</span></div>
+                            <div><input class="input" type="checkbox"> Any Graduate<span>(20)</span></div>
+                            <div><input class="input" type="checkbox" id="btechCheckbox1"> B.Tech/B.E<span>(1)</span></div>
+                            <div style="margin-left: 20px;margin-top: 7px;color: #275DF5; font: 14px;">View more</div>
+                        </div><br>
+                    </div>
+                    <div class="horizontal"></div><br>
+                    <div class="posted">
+                        <div style="font-size: 17px;">Posted by<span><i id="arrow" style="margin-left: 123px;"
+                                    class="fa-solid fa-angle-down" onclick="posted()"></i></span></div>
+                        <div class="dept" id="posted2">
+                            <input class="input" type="checkbox" id="companyCheckbox1"> Company Jobs<span>(8)</span><br>
+                            <div><input class="input" type="checkbox" id="consultantCheckbox1"> Consultant Jobs<span>(3)</span></div>
+                        </div><br>
+                    </div>
+                    <div class="horizontal"></div><br>
+                    <div class="Industry">
+                        <div style="font-size: 17px;">Industry<span><i id="arrow" style="margin-left: 123px;"
+                                    class="fa-solid fa-angle-down" onclick="industry()"></i></span></div>
+                        <div class="dept" id="industry1">
+                            <input class="input" type="checkbox"> Auto Components<span>(2)</span><br>
+                            <div><input class="input" type="checkbox"> Goverment / Publ<span>(2)</span></div>
+                            <div><input class="input" type="checkbox"> Chemicals<span>(1)</span></div>
+                            <div><input class="input" type="checkbox"> Electrical Equipment<span>(1)</span></div>
+                            <div style="margin-left: 20px;margin-top: 7px;color: #275DF5; font: 14px;">View more</div>
+                        </div><br>
+                    </div>
+                    <div class="horizontal"></div><br>
+                    <div class="Location">
+                        <div style="font-size: 17px;">Location<span><i id="arrow" style="margin-left: 123px;"
+                                    class="fa-solid fa-angle-down" onclick="locate()"></i></span></div>
+                        <div class="dept" id="locate2">
+                            <input class="input" type="checkbox" id="chennaiCheckbox1"> Chennai<span>(1)</span><br>
+                            <div><input class="input" type="checkbox" id="puneCheckbox1"> Pune<span>(3)</span></div>
+                            <div><input class="input" type="checkbox" id="delhiCheckbox1"> Delhi / NCR<span>(2)</span></div>
+                            <div><input class="input" type="checkbox" id="bangloreCheckbox1"> Banglore<span>(2)</span></div>
+                            <div style="margin-left: 20px;margin-top: 7px;color: #275DF5; font: 14px;">View more</div>
+                        </div><br>
+                        <div style="background-color: white; height: 250px;width: 240px;border-radius: 15px;">
+                            <div><img style="width: 150px;margin-left: 15px;" src="freshers.png" alt=""></div>
+                            <p class="para" >Increase your profile visibility up to 3 times among recruiters hiring for their jobs</p>
+                            <p style="margin-left: 15px;">Become visible to more recruiters with Resume Display Service.</p>
+                            <p style="font-weight: 500;color: #275DF5;margin-left: 15px;">Know More</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="job-listing" id="job-listing">
+            <div class="square" id='square'>
+                <div class="head">Design Head</div>
+                <div>Indian Placement Services</div><br>
+                <div class="textSquare">
+                <div class="t"><i class="fa-solid fa-bag-shopping"></i> <span style="margin-left: 10px;"> 25 - 30 Yrs </span> <span id="ruppee" class="vertical"></span> <i id="ruppee" class="fa-solid fa-indian-rupee-sign"></i>Not Disclosed <span id="ruppee"  class="vertical"></span><i id="ruppee" class="fa-solid fa-location-dot"></i> Banglore</div>
+                <div class="t"><i class="fa-regular fa-note-sticky"></i> <span style="margin-left: 10px;">25-30 years Experience in developing Sheet-Metal& Tubular </span></div>
+                <div class="foot"><p>Finite Element Analysis <span class="smallHorizontal"></span><span>Prototyping <span class="smallHorizontal"></span></span><span>Desining<span class="smallHorizontal"></span></span><span>Desining<span class="smallHorizontal"></span></span>Analysis</p></div>
+                <div><span class="date">6 Day ago</span> <span style="margin-left: 350px;">Save <i id="save1" class="fa-regular fa-bookmark"></i></span></div>
+            </div>
+            </div>
+            <div class="square" id="square">
+               <div class="head">Plant Head</div>
+                <div>Cam Tools Industries</div><br>
+                <div class="textSquare">
+                <div><i class="fa-solid fa-bag-shopping"></i> <span style="margin-left: 10px;"> 20-30 Yrs </span> <span id="ruppee" class="vertical"></span><i id="ruppee" class="fa-solid fa-indian-rupee-sign"></i> 30-35 Lacs PA<span id="ruppee"  class="vertical"></span><i id="ruppee" class="fa-solid fa-location-dot"></i> Pune(Chakan+1)</div>
+                <div><i class="fa-regular fa-note-sticky"></i><span style="margin-left: 10px;">Exceptional managerial, communication, problem-solving skills. .Bach.. </span> </div>
+                <p>Finite Element Analysis <span class="smallHorizontal"></span><span>and lumax.<span class="smallHorizontal"></span></span><span style="font-size: 12px;"> The ideal candidate will possess a profound understanding of the automative Tier<span class="smallHorizontal"></span></span><span>Desining<span class="smallHorizontal"></span></span>Analysis</p>
+                <div><span class="date">2 Day ago</span><span style="margin-left: 350px;">Save <i id="save2" class="fa-regular fa-bookmark"></i></span></div>
+            </div>
+            </div>
+            <div class="square">
+                <div class="head">Head Business development</div>
+                <div>Cam Tools Industries</div><br>
+                <div class="textSquare">
+                <div><i class="fa-solid fa-bag-shopping"></i> <span style="margin-left: 10px;"> 20-30 Yrs </span> <span id="ruppee" class="vertical"></span><i id="ruppee" class="fa-solid fa-indian-rupee-sign"></i> 9 - 12 Lacs PA<span id="ruppee"  class="vertical"></span><i id="ruppee" class="fa-solid fa-location-dot"></i> Pune(Chakan+1)</div>
+                <div><i class="fa-regular fa-note-sticky"></i><span style="margin-left: 10px;">Exceptional managerial, communication, problem-solving skills. .Bach.. </span> </div>
+                <p>Finite Element Analysis <span class="smallHorizontal"></span><span>and lumax.<span class="smallHorizontal"></span></span><span style="font-size: 12px;"> The ideal candidate will possess a profound understanding of the automative Tier<span class="smallHorizontal"></span></span><span>Desining<span class="smallHorizontal"></span></span>Analysis</p>
+                <div><span class="date">3 Day ago</span> <span style="margin-left: 350px;">Save <i id="save3" class="fa-regular fa-bookmark"></i></span></div>
+            </div>
+            </div>
+            <div class="square">
+                <div class="head">VICE President / SITE HEAD Operations</div>
+                <div>Cam Tools Industries</div><br>
+                <div class="textSquare">
+                <div><i class="fa-solid fa-bag-shopping"></i> <span style="margin-left: 10px;"> 20-30 Yrs </span> <span id="ruppee" class="vertical"></span><i id="ruppee" class="fa-solid fa-indian-rupee-sign"></i> 30-40 Lacs PA<span id="ruppee"  class="vertical"></span><i id="ruppee" class="fa-solid fa-location-dot"></i> Noida</div>
+                <div><i class="fa-regular fa-note-sticky"></i><span style="margin-left: 10px;">Exceptional managerial, communication, problem-solving skills. .Bach.. </span> </div>
+                <p>Finite Element Analysis <span class="smallHorizontal"></span><span>and lumax.<span class="smallHorizontal"></span></span><span style="font-size: 12px;"> The ideal candidate will possess a profound understanding of the automative Tier<span class="smallHorizontal"></span></span><span>Desining<span class="smallHorizontal"></span></span>Analysis</p>
+                <div><span class="date">8 Day ago</span><span style="margin-left: 350px;">Save <i id="save4" class="fa-regular fa-bookmark"></i></span></div>
+            </div>
+            </div>
+            <div class="square">
+                <div class="head">Assistant Manager- Technical</div>
+                <div>Cam Tools Industries</div><br>
+                <div class="textSquare">
+                <div><i class="fa-solid fa-bag-shopping"></i> <span style="margin-left: 10px;"> 20-30 Yrs </span> <span id="ruppee" class="vertical"></span><i id="ruppee" class="fa-solid fa-indian-rupee-sign"></i> 25-30 Lacs PA<span id="ruppee"  class="vertical"></span><i id="ruppee" class="fa-solid fa-location-dot"></i> Chennai</div>
+                <div><i class="fa-regular fa-note-sticky"></i><span style="margin-left: 10px;">Exceptional managerial, communication, problem-solving skills. .Bach.. </span> </div>
+                <p>Finite Element Analysis <span class="smallHorizontal"></span><span>and lumax.<span class="smallHorizontal"></span></span><span style="font-size: 12px;"> The ideal candidate will possess a profound understanding of the automative Tier<span class="smallHorizontal"></span></span><span>Desining<span class="smallHorizontal"></span></span>Analysis</p>
+                <div><span class="date">5 Day ago</span> <span style="margin-left: 350px;">Save <i id="save5" class="fa-regular fa-bookmark"></i></span></div>
+            </div>
+            </div>
+            <div class="square">
+                <div class="head">Technical Expert - Dredging</div>
+                <div>Cam Tools Industries</div><br>
+                <div class="textSquare">
+                <div><i class="fa-solid fa-bag-shopping"></i> <span style="margin-left: 10px;"> 20-30 Yrs </span> <span id="ruppee" class="vertical"></span><i id="ruppee" class="fa-solid fa-indian-rupee-sign"></i> 10 - 12 Lacs PA<span id="ruppee"  class="vertical"></span><i id="ruppee" class="fa-solid fa-location-dot"></i> Pune(Chakan+1)</div>
+                <div><i class="fa-regular fa-note-sticky"></i><span style="margin-left: 10px;">Exceptional managerial, communication, problem-solving skills. .Bach.. </span> </div>
+                <p>Finite Element Analysis <span class="smallHorizontal"></span><span>and lumax.<span class="smallHorizontal"></span></span><span style="font-size: 12px;"> The ideal candidate will possess a profound understanding of the automative Tier<span class="smallHorizontal"></span></span><span>Desining<span class="smallHorizontal"></span></span>Analysis</p>
+                <div><span class="date">4 Day ago</span><span style="margin-left: 350px;">Save <i id="save6" class="fa-regular fa-bookmark"></i></span></div>
+            </div>
+            </div>
+            <div class="square">
+                <div class="head">Microsoft</div>
+                <div>Private Limited</div><br>
+                <div class="textSquare">
+                <div><i class="fa-solid fa-bag-shopping"></i> <span style="margin-left: 10px;"> 20-30 Yrs </span> <span id="ruppee" class="vertical"></span><i id="ruppee" class="fa-solid fa-indian-rupee-sign"></i> 45 - 55 Lacs PA<span id="ruppee"  class="vertical"></span><i id="ruppee" class="fa-solid fa-location-dot"></i> Gurgaon, Hydrabad</div>
+                <div><i class="fa-regular fa-note-sticky"></i><span style="margin-left: 10px;">Exceptional managerial, communication, problem-solving skills. .Bach.. </span> </div>
+                <p>Finite Element Analysis <span class="smallHorizontal"></span><span>and lumax.<span class="smallHorizontal"></span></span><span style="font-size: 12px;"> The ideal candidate will possess a profound understanding of the automative Tier<span class="smallHorizontal"></span></span><span>Desining<span class="smallHorizontal"></span></span>Analysis</p>
+                <div><span class="date">1 Day ago</span><span style="margin-left: 350px;">Save <i id="save7" class="fa-regular fa-bookmark"></i></span></div>
+            </div>
+            </div>
+            <div class="square">
+                <div class="head">Deloitte</div>
+                <div>Private Limited</div><br>
+                <div class="textSquare">
+                <div><i class="fa-solid fa-bag-shopping"></i> <span style="margin-left: 10px;"> 21-30 Yrs </span> <span id="ruppee" class="vertical"></span><i id="ruppee" class="fa-solid fa-indian-rupee-sign"></i> 12 - 25 Lacs PA<span id="ruppee"  class="vertical"></span><i id="ruppee" class="fa-solid fa-location-dot"></i> Delhi(NCR)</div>
+                <div><i class="fa-regular fa-note-sticky"></i><span style="margin-left: 10px;">Exceptional managerial, communication, problem-solving skills. .Bach.. </span> </div>
+                <p>Finite Element Analysis <span class="smallHorizontal"></span><span>and lumax.<span class="smallHorizontal"></span></span><span style="font-size: 12px;"> The ideal candidate will possess a profound understanding of the automative Tier<span class="smallHorizontal"></span></span><span>Desining<span class="smallHorizontal"></span></span>Analysis</p>
+                <div><span class="date">2 Day ago</span> <span style="margin-left: 350px;">Save <i id="save8" class="fa-regular fa-bookmark"></i></span></div>
+            </div>
+            </div>
+            <div class="square">
+                <div class="head">Infosys</div>
+                <div>Private Limited</div><br>
+                <div class="textSquare">
+                <div><i class="fa-solid fa-bag-shopping"></i> <span style="margin-left: 10px;"> 21-30 Yrs </span> <span id="ruppee" class="vertical"></span><i id="ruppee" class="fa-solid fa-indian-rupee-sign"></i> 8 - 25 Lacs PA<span id="ruppee"  class="vertical"></span><i id="ruppee" class="fa-solid fa-location-dot"></i> Gurgaon, Banglore, Delhi</div>
+                <div><i class="fa-regular fa-note-sticky"></i><span style="margin-left: 10px;">Exceptional managerial, communication, problem-solving skills. .Bach.. </span> </div>
+                <p>Finite Element Analysis <span class="smallHorizontal"></span><span>and lumax.<span class="smallHorizontal"></span></span><span style="font-size: 12px;"> The ideal candidate will possess a profound understanding of the automative Tier<span class="smallHorizontal"></span></span><span>Desining<span class="smallHorizontal"></span></span>Analysis</p>
+                <div><span class="date">3 Day ago</span><span style="margin-left: 350px;">Save <i id="save9" class="fa-regular fa-bookmark"></i></span></div>
+            </div>
+            </div>
+        </div>
+        </div><br><br>
+        <div class="previous" style="display: flex; justify-content: center;gap: 10px;"><button>Previous</button><span>1</span><button>Next</button></div>
+    </div>
+        <div class="right1">
+        <div class="right">
+                <div class="in">
+                    <p style="font-size: 20px;color: black;">Add another recruiter</p>
+                <input class="inp"  type="text" placeholder="Enter company name" id="name1">
+                <input class="inp" type="text" placeholder="Enter age requirement" id="name2">
+                <input class="inp" type="text" placeholder="Enter package" id="name3">
+                <input class="inp" type="text" placeholder="Enter location" id="name4">
+            </div>
+            <br>
+               <div style="align-self: center;" class="upward">
+                <button id="add" class="butt" >Add company</button>
+            </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <div class="mainFooter" id="mainFooter">
+    <div class="footer">
+       
+        <div class="left">
+            <img style="width: 190px;" src="freshers.png" alt="">
+            <p style="margin-left: 10px;">Connect with us</p>
+            
+            <div class="left1">
+            <a href="#" class="facebook-btn" target="_blank">
+                <i class="fab fa-facebook"></i>
+            </a></p>
+            <a href="#" class="twitter-btn" target="_blank">
+                <i class="fab fa-twitter"></i>
+            </a></p>
+            <a href="#" class="pinterest-btn" target="_blank">
+                <i class="fab fa-pinterest"></i>
+            </a>
+            <a href="#" class="linkedin-btn" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="#" class="whatsapp-btn" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+        </div>
+        <div class="middle">
+            <p>About us</p>
+            <p>Carrers</p>
+            <p>Employ home</p>
+            <p>Sitemap</p>
+            <p>Credits</p>
+        </div>
+        <div class="middleRight">
+            <p>Help center</p>
+            <p>Summons/Notices</p>
+            <p>Grievances</p>
+            <p>Report issue</p>
+        </div>
+        <div class="mr">
+            <p onclick="privacy()">Privacy policy</p>
+            <p onclick="terms()">Term & Conditions</p>
+            <p>Fraud alert</p>
+            <p>Trust & Safety</p>
+            
+        </div>
+        <div class="log">
+            <p style="font-size: 35px;margin-left: 80px;">Our partners</p>
+            <marquee class="blink">
+                <img class="lo" src="pngwing.com (1).png" alt="">
+                <img class="lo" src="pngwing.com (2).png" alt="">
+                <img class="lo" src="pngwing.com (3).png" alt="">
+                <img class="lo" style="width: 130px;height: 100px;" src="pngwing.com (4).png" alt="">
+                <img class="lo" src="pngwing.com (5).png" alt="">
+                <img class="lo" src="pngwing.com (6).png" alt="">
+                <img class="lo" src="pngwing.com (7).png" alt="">
+                <img class="lo" src="pngwing.com (8).png" alt="">
+                <img class="lo" src="pngwing.com (9).png" alt=""> 
+                <img class="lo" src="pngwing.com.png" alt="">
+                <!-- <img src="pngwing.com.png" alt=""> -->
+            </marquee>
+        </div>      
+    </div> 
+    
+</div>
+<script>
+    
+       const facebookBtn = document.querySelector(".facebook-btn");
+        const twitterBtn = document.querySelector(".twitter-btn");
+        const whatsappBtn = document.querySelector(".whatsapp-btn");
+        const linkedinBtn = document.querySelector(".linkedin-btn");
+        const pinterestBtn = document.querySelector(".pinterest-btn");
+
+        function init() {
+            const pinterestImg = document.querySelector(".pinterest-img");
+            let postUrl = encodeURI(document.location.href);
+            // let postImg = encodeURI(pinterestImg.src);
+            let postTitle = encodeURI("Hey there,\n\nI recently used this site, an awesome job site that provides a wealth of resources and information for jobs of all levels. Whether you're a fresher or experienced, this site  has something for you.\n\nI've found the site to be incredibly helpful in finding the jobs in various fields, and I think you'll benefit from it too.\n\n if you find something that you think would be useful to others, don't hesitate to share it with your friends and colleagues.\n\n www.Freshers.com");
+            let postTitle2 = encodeURI("Just joined Freshers.com\n\n An awesome job apply site with a wealth of resources for all levels. \nImprove your skills and knowledge today! \nJoin freshers.com Today\n\n www.freshers.com" )
+            facebookBtn.setAttribute("href", `https://www.facebook.com/sharer.php?u=${postUrl}`);
+            twitterBtn.setAttribute("href", `https://twitter.com/share?url=&text=${postTitle2}`);
+            whatsappBtn.setAttribute("href", `https://wa.me/?text=${postTitle} `);
+            linkedinBtn.setAttribute("href", `https://www.linkedin.com/shareArticle?url=&title=${postTitle}`);
+            pinterestBtn.setAttribute("href",`https://pinterest.com/pin/create/bookmarklet/?media=&url=&description=${postTitle}`);
+            
+        }
+        init();
+        
+</script>
+</body>
+</html>
+<script src="project.js"></script>
